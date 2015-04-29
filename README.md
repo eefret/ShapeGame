@@ -1,2 +1,5 @@
 # ShapeGame
 A Shape game made with unity
+
+# Gameplay 
+Shape tapping game The game will just be an arcade style game with point GUIs. The object of the game will be to keep theshape from hitting the red spikes. The object will always be falling, so to keep it from hitting the spikes you have to tap it with your finger (or for right now mouseclick if we need it to). With each tap it will shoot off in the opposite direction, it will also bounce off the walls and shoot off in the oppostie direction as well. With each tap, you get one point. After 15 taps the first shape (triangle) will turn black and you can not tap it. You must let it hit the spikes so the next shape (square) will drop so you can start tapping it. That one will have to be tapped until 20 or so. And then so on, but with each shape you get one more side to the shape. Which adds in the directions it can go when you tap it. Maybe we can have things fall that we have to tap as well for like power ups or something (we can think of something forthat later). 
