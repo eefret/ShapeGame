@@ -100,7 +100,7 @@ GameObject:
   - 114: {fileID: 34808551}
   - 61: {fileID: 34808552}
   m_Layer: 0
-  m_Name: Endless
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 34808547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.49000001, y: .360000014, z: 0}
+  m_LocalPosition: {x: -2.58999991, y: 5.5999999, z: 0}
   m_LocalScale: {x: .113329537, y: .113329552, z: .113329552}
   m_Children:
   - {fileID: 1751509499}
@@ -127,16 +127,14 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 34808547}
-  m_Text: 'Endless
-
-'
+  m_Text: Play
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 2
   m_TabSize: 4
-  m_FontSize: 267
+  m_FontSize: 304
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 3c97de1e09bb3d54085b4ab4c070e2aa, type: 3}
@@ -1539,7 +1537,7 @@ TextMesh:
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 352
+  m_FontSize: 248
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 3c97de1e09bb3d54085b4ab4c070e2aa, type: 3}
@@ -1577,7 +1575,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 574681499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.78999996, y: 10.4899998, z: 0}
+  m_LocalPosition: {x: -6.19999981, y: 9.17000008, z: 0}
   m_LocalScale: {x: .0225871038, y: .0225871112, z: .0225871112}
   m_Children: []
   m_Father: {fileID: 1865166262}
@@ -1606,7 +1604,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 594047951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.62490749, y: 3.64228773, z: 0}
+  m_LocalPosition: {x: -4.62490749, y: 2.75999999, z: 0}
   m_LocalScale: {x: .119444668, y: .119444683, z: .119444683}
   m_Children:
   - {fileID: 757576595}
@@ -1621,16 +1619,14 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 594047951}
-  m_Text: 'Campaign
-
-'
+  m_Text: Highscores
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 267
+  m_FontSize: 220
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 3c97de1e09bb3d54085b4ab4c070e2aa, type: 3}
@@ -1846,7 +1842,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1114758252}
   m_LocalRotation: {x: 0, y: 0, z: -.999994576, w: -.00331068621}
-  m_LocalPosition: {x: 44.2999992, y: 2, z: 0}
+  m_LocalPosition: {x: 18.6000004, y: 1.10000002, z: 0}
   m_LocalScale: {x: 11.7491283, y: 11.7491159, z: 11.7491159}
   m_Children: []
   m_Father: {fileID: 34808548}
