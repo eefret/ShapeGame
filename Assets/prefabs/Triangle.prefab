@@ -12,7 +12,7 @@ GameObject:
   - 95: {fileID: 9555582}
   - 114: {fileID: 11497356}
   - 50: {fileID: 5095864}
-  - 60: {fileID: 6056870}
+  - 58: {fileID: 5850606}
   m_Layer: 10
   m_Name: Triangle
   m_TagString: Player
@@ -26,8 +26,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146116}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.73000002, y: 7.26999998, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .378971726, w: .925408304}
+  m_LocalPosition: {x: .248341784, y: 6.23195934, z: 0}
   m_LocalScale: {x: .400000006, y: .400000006, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,13 +42,13 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_FixedAngle: 0
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!60 &6056870
-PolygonCollider2D:
+--- !u!58 &5850606
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -57,12 +57,9 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 1.87955046, y: -1.8686862}
-      - {x: 1.88471127, y: 2.86602354}
-      - {x: -2.76548052, y: 2.93054342}
+  m_Offset: {x: 0, y: .930000007}
+  serializedVersion: 2
+  m_Radius: 3.30999994
 --- !u!95 &9555582
 Animator:
   serializedVersion: 3
@@ -91,8 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84948ee962876c44b8048671c66f857a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSides: 3
   strength: 10
+  type: 0
 --- !u!212 &21229702
 SpriteRenderer:
   m_ObjectHideFlags: 1
