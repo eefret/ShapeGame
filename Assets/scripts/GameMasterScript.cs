@@ -35,18 +35,17 @@ public class GameMasterScript : MonoBehaviour {
 
     void ShapeDestroyed(string shape) {
         switch (shape) {
-            case "TRIANGLE":
-                TriangleCount++;
-                RandInstantiate(TriangleCount);
-                break;
+            case "TRIANGLE":              
             case "SQUARE":
-                RandInstantiate(SquareCount);
+                if (shapeCount < maxShapes) {
+                    RandInstantiate(Random.Range(0, 3));
+                }
                 break;
         }
     }
 
     void GameOver() {
-
+        Application.LoadLevel(2);
     }
 
     void RandInstantiate(int count) {
@@ -68,7 +67,7 @@ public class GameMasterScript : MonoBehaviour {
                 case 2:
                     made = true;
                     if (shapeCount < maxShapes) {
-                        Instantiate(Square, new Vector3(1, 10, 0), Quaternion.identity);
+                        Instantiate(Square, new Vector3(-2, 10, 0), Quaternion.identity);
                     }
                     break;
             }   
