@@ -16,7 +16,11 @@ public class OnClickListener : MonoBehaviour {
         } else if(platform == RuntimePlatform.WindowsPlayer) {
             if (Input.GetMouseButtonDown(0)) {
                 checkTouch(Input.GetTouch(0).position);
-            }
+            }   
+        }
+
+        if (Input.GetMouseButtonDown(0)) {
+            checkTouch(Input.mousePosition);
         }
 	}
 
@@ -26,7 +30,12 @@ public class OnClickListener : MonoBehaviour {
         Collider2D hit = Physics2D.OverlapPoint(touchPos);
         if (hit) {
             Debug.Log(hit.transform.gameObject.name);
-            hit.transform.gameObject.SendMessage("Clicked", 0, SendMessageOptions.DontRequireReceiver);
+            hit.transform.gameObject.SendMessage("Clicked", SendMessageOptions.DontRequireReceiver);
+        } else {
+            RaycastHit2D ray = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pos), Vector2.zero);
+            if (ray.collider != null) {
+                ray.transform.gameObject.SendMessage("Clicked", SendMessageOptions.DontRequireReceiver);
+            }
         }
     }
 }

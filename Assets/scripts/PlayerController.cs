@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     private bool isInZone;
     private Animator playerAnim;
     private GameObject gameMaster;
+    private GameMasterScript gameController;
 
 	// Use this for initialization
 	void Start () {
@@ -35,33 +36,15 @@ public class PlayerController : MonoBehaviour {
                 break;
         }
         gameMaster = GameObject.FindGameObjectWithTag("GameController");
+        gameController = gameMaster.GetComponent<GameMasterScript>();
 	}
-
-    // Update is called once per frame
-    void Update() {
-        if (Input.touchCount > 0) {
-            if (Input.GetTouch(0).phase.Equals(TouchPhase.Began)) {
-                if (isInZone) {
-                    Debug.Log("clicked in zone");
-                    Vector3 pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-                    playerBody.AddForce(pos * strength, ForceMode2D.Impulse);
-                    sides++;
-                } else {
-                    Debug.Log("Clicked out zone");
-                    sides--;
-                }
-            }
-            Debug.Log("sides :" + sides);
-            isDeactivated = sides == maxSides;
-            playerAnim.SetInteger("Sides", sides);
-        }
-    }
 
     public void OnCollisionEnter2D(Collision2D collision){
         if (collision.transform.tag == "spikes") {
             if (isDeactivated) {
                 Destroy(this.gameObject);
                 gameMaster.SendMessage("ShapeDestroyed", playerName, SendMessageOptions.DontRequireReceiver);
+                gameController.addScore(10);
                 Debug.Log("Destroyed Shape: " + playerName);
             } else {
                 gameMaster.SendMessage("GameOver");//Game Over
@@ -73,13 +56,28 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public void Clicked() {
+        Debug.Log("clicked");
+        if (isInZone) {
+            Debug.Log("clicked in zone");
+            Vector3 pos = new Vector3(Random.Range(-5f, 5f), 10);
+            playerBody.AddForce(pos * strength, ForceMode2D.Impulse);
+            sides++;
+            gameController.addScore(1);
+        } else {
+            if (isDeactivated) {
+                gameMaster.SendMessage("GameOver");//Game Over
+            }
+        }
+        isDeactivated = sides == maxSides;
+        playerAnim.SetInteger("Sides", sides);
+    }
+
     public void OnTriggerStay2D(Collider2D collision) {
-        Debug.Log("Trigger stayed");
         isInZone = true;
     }
 
     public void OnTriggerExit2D(Collider2D collision) {
-        Debug.Log("Trigger out");
         isInZone = false;
     }
 
