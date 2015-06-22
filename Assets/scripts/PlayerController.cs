@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
     
     //PUBLIC
-    public enum ShapeType { TRIANGLE, SQUARE};
+    public enum ShapeType { TRIANGLE, SQUARE, PENTAGON};
     public float strength = 1.0f;
     public ShapeType type;
     //PRIVATE
@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour {
                 maxSides = 4;
                 playerName = "SQUARE";
                 break;
+			case ShapeType.PENTAGON:
+				maxSides = 5;
+				playerName = "PENTAGON";
+				break;
         }
         gameMaster = GameObject.FindGameObjectWithTag("GameController");
         gameController = gameMaster.GetComponent<GameMasterScript>();

@@ -9,6 +9,7 @@ public class GameMasterScript : MonoBehaviour {
     private static int shapeCount = 0;
     public GameObject Triangle;
     public GameObject Square;
+	public GameObject Pentagon;
     public GUIText scoreText;
     private int score;
 
@@ -37,39 +38,50 @@ public class GameMasterScript : MonoBehaviour {
         switch (shape) {
             case "TRIANGLE":              
             case "SQUARE":
+			case "PENTAGON":
                 if (shapeCount < maxShapes) {
-                    RandInstantiate(Random.Range(0, 3));
+					int selected = Random.Range(1, 2);
+					Debug.Log ("Selected: "+selected);
+					RandInstantiate(selected);
                 }
                 break;
         }
     }
 
     void GameOver() {
+
         Application.LoadLevel(2);
     }
 
     void RandInstantiate(int count) {
         bool made = false;
         for (int i = 0; i < count; i++) {
-            int range = Random.Range(0, 2);
+            int range = Random.Range(0, 3);
             if (!made) {
-                range = Random.Range(1, 2);
+                range = Random.Range(1, 3);
             }
+			Debug.Log("range: "+range);
             switch (range) {
                 case 0:
-                   break;
+                break;
                 case 1:
-                    made = true;
-                    if (shapeCount < maxShapes) {
-                        Instantiate(Triangle, new Vector3(-2, 10, 0), Quaternion.identity);
-                    }
-                    break;
+                made = true;
+                if (shapeCount < maxShapes) {
+                    Instantiate(Triangle, new Vector3(-2, 10, 0), Quaternion.identity);
+                }
+                break;
                 case 2:
-                    made = true;
-                    if (shapeCount < maxShapes) {
-                        Instantiate(Square, new Vector3(-2, 10, 0), Quaternion.identity);
-                    }
-                    break;
+                made = true;
+                if (shapeCount < maxShapes) {
+                    Instantiate(Square, new Vector3(-2, 10, 0), Quaternion.identity);
+                }
+                break;
+				case 3:
+				made = true;
+				if (shapeCount < maxShapes){
+					Instantiate(Pentagon, new Vector3(-2, 10, 0), Quaternion.identity); 
+				}
+				break;
             }   
         }
     }

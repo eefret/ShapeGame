@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Triangle: {fileID: 146116, guid: 8344aa9e3902eea4f9d32a359fe932b6, type: 2}
   Square: {fileID: 129884, guid: 7fb6196a49e1371408f52e70984e3b02, type: 2}
+  Pentagon: {fileID: 156954, guid: 07b28a4a6bd4d9d409285dd892061943, type: 2}
   scoreText: {fileID: 1905616823}
 --- !u!4 &54175628
 Transform:
