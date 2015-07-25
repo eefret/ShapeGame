@@ -41,7 +41,6 @@ public class GameMasterScript : MonoBehaviour {
 			case "PENTAGON":
                 if (shapeCount < maxShapes) {
 					int selected = Random.Range(1, 2);
-					Debug.Log ("Selected: "+selected);
 					RandInstantiate(selected);
                 }
                 break;
@@ -60,7 +59,6 @@ public class GameMasterScript : MonoBehaviour {
             if (!made) {
                 range = Random.Range(1, 3);
             }
-			Debug.Log("range: "+range);
             switch (range) {
                 case 0:
                 break;
