@@ -1,0 +1,6 @@
+<TextureAtlas imagePath="@ld.png">
+	<SubTexture name="RedSparks(forBottom).10.png" x="0" y="428" width="503" height="117"/>
+	<SubTexture name="RedSparks(forBottom).15.png" x="0" y="283" width="510" height="140"/>
+	<SubTexture name="RedSparks(forBottom).20.png" x="0" y="144" width="513" height="134"/>
+	<SubTexture name="RedSparks(forBottom).25.png" x="0" y="0" width="517" height="139"/>
+</TextureAtlas>

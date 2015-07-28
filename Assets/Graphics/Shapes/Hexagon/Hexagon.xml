@@ -1,0 +1,11 @@
+<TextureAtlas imagePath="sprite.png">
+	<SubTexture name="HexagonBlue.png" x="0" y="2808" width="750" height="694"/>
+	<SubTexture name="HexagonBlue1.png" x="0" y="2106" width="750" height="694"/>
+	<SubTexture name="HexagonBlue2.png" x="758" y="0" width="750" height="694"/>
+	<SubTexture name="HexagonBlue3.png" x="0" y="0" width="750" height="694"/>
+	<SubTexture name="HexagonBlue4.png" x="758" y="702" width="750" height="694"/>
+	<SubTexture name="HexagonBlue5.png" x="0" y="1404" width="750" height="694"/>
+	<SubTexture name="HexagonRed.png" x="0" y="702" width="750" height="694"/>
+	<SubTexture name="HexagonReference.png" x="0" y="3510" width="547" height="474"/>
+	<SubTexture name="HexagonReferenceRed.png" x="555" y="3510" width="547" height="474"/>
+</TextureAtlas>

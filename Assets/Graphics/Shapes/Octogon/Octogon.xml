@@ -1,0 +1,12 @@
+<TextureAtlas imagePath="sprite.png">
+	<SubTexture name="OctogonBlue.png" x="330" y="654" width="322" height="319"/>
+	<SubTexture name="OctogonBlue1.png" x="330" y="327" width="322" height="319"/>
+	<SubTexture name="OctogonBlue2.png" x="330" y="0" width="322" height="319"/>
+	<SubTexture name="OctogonBlue3.png" x="0" y="1635" width="322" height="319"/>
+	<SubTexture name="OctogonBlue4.png" x="0" y="1308" width="322" height="319"/>
+	<SubTexture name="OctogonBlue5.png" x="0" y="981" width="322" height="319"/>
+	<SubTexture name="OctogonBlue6.png" x="0" y="654" width="322" height="319"/>
+	<SubTexture name="OctogonBlue7.png" x="0" y="327" width="322" height="319"/>
+	<SubTexture name="OctogonRed.png" x="0" y="0" width="322" height="319"/>
+	<SubTexture name="OctogonReference.png" x="330" y="981" width="238" height="238"/>
+</TextureAtlas>

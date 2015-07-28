@@ -7,57 +7,55 @@ public class GameMasterScript : MonoBehaviour {
     private static int SquareCount = 0;
     private static int maxShapes = 3;
     private static int shapeCount = 0;
+
+    public GameObject levelObject;
+    public GameObject gameOverPanel;
+
+    public BoxCollider2D greenZoneCollider;
+
     public GameObject Triangle;
     public GameObject Square;
 	public GameObject Pentagon;
-    public GUIText scoreText;
-    private int score;
 
     public void Start() {
-        score = 0;
-
+        DataManager.instance.Reset();
     }
-
-    public void addScore(int ammount) {
-        score += ammount;
-        updateScore(score);
-    }
-
-    private void updateScore(int score){
-        scoreText.text = "Score: " + score;
-    }
-
-    
 
 	// Use this for initialization
 	void Awake() {
-        Instantiate(Triangle, new Vector3(-2, 10, -1), Quaternion.identity);
+        GameObject shape = Instantiate(Triangle) as GameObject;
+        shape.transform.parent = levelObject.transform;
+        shape.transform.localPosition = new Vector3(Random.Range(-3.5f, 3.5f), 10, -2);
 	}
 
-    void ShapeDestroyed(string shape) {
-        switch (shape) {
-            case "TRIANGLE":              
-            case "SQUARE":
-			case "PENTAGON":
-                if (shapeCount < maxShapes) {
-					int selected = Random.Range(1, 2);
-					RandInstantiate(selected);
-                }
-                break;
+    void ShapeDestroyed(string shapeName) {
+        if (shapeCount < maxShapes) {
+            int selected = Random.Range(1, 2);
+            GameObject shape = RandInstantiate(selected);
+            if(shape != null) {
+                shape.transform.parent = levelObject.transform;
+                shape.transform.localPosition = new Vector3(Random.Range(-3.5f, 3.5f), 10, -2);
+            }
         }
     }
-
+    
     void GameOver() {
-
-        Application.LoadLevel(2);
+        DataManager.instance.updateData = false;
+        DataManager.instance.SaveData();
+        if(gameOverPanel != null) {
+            gameOverPanel.SetActive(true);
+        }
+        if(levelObject != null) {
+            levelObject.SetActive(false);
+        }
     }
-
-    void RandInstantiate(int count) {
+    
+    GameObject RandInstantiate(int count) {
         bool made = false;
         for (int i = 0; i < count; i++) {
-            int range = Random.Range(0, 3);
+            int range = Random.Range(0, 4);
             if (!made) {
-                range = Random.Range(1, 3);
+                range = Random.Range(1, 4);
             }
             switch (range) {
                 case 0:
@@ -65,22 +63,23 @@ public class GameMasterScript : MonoBehaviour {
                 case 1:
                 made = true;
                 if (shapeCount < maxShapes) {
-                    Instantiate(Triangle, new Vector3(-2, 10, 0), Quaternion.identity);
+                    return Instantiate(Triangle) as GameObject;
                 }
                 break;
                 case 2:
                 made = true;
                 if (shapeCount < maxShapes) {
-                    Instantiate(Square, new Vector3(-2, 10, 0), Quaternion.identity);
+                    return Instantiate(Square) as GameObject;
                 }
                 break;
 				case 3:
 				made = true;
-				if (shapeCount < maxShapes){
-					Instantiate(Pentagon, new Vector3(-2, 10, 0), Quaternion.identity); 
+                if (shapeCount < maxShapes){
+                    return Instantiate(Pentagon) as GameObject;
 				}
 				break;
             }   
         }
+        return null;
     }
 }

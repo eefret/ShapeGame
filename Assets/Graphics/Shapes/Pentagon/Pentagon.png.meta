@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 57309bd942cde4744ac5eef8177d500d
+timeCreated: 1437869653
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Pentagon_0
+    21300002: Pentagon_1
+    21300004: Pentagon_2
+    21300006: Pentagon_3
+    21300008: Pentagon_4
+    21300010: Pentagon_5
+    21300012: Pentagon_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Pentagon_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1414
+        width: 597
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pentagon_1
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1414
+        width: 597
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pentagon_2
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 1633
+        width: 438
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pentagon_3
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 748
+        width: 597
+        height: 589
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pentagon_4
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 748
+        width: 597
+        height: 589
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pentagon_5
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 82
+        width: 597
+        height: 589
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Pentagon_6
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 85
+        width: 597
+        height: 589
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

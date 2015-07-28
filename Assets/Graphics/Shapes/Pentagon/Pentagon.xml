@@ -1,0 +1,9 @@
+<TextureAtlas imagePath="sprite.png">
+	<SubTexture name="PentagonBlue.1.png" x="681" y="1332" width="673" height="658"/>
+	<SubTexture name="PentagonBlue.2.png" x="681" y="666" width="673" height="658"/>
+	<SubTexture name="PentagonBlue.3.png" x="0" y="0" width="673" height="658"/>
+	<SubTexture name="PentagonBlue.4.png" x="0" y="1332" width="673" height="658"/>
+	<SubTexture name="PentagonBlue.png" x="0" y="666" width="673" height="658"/>
+	<SubTexture name="PentagonColliderReference.png" x="1362" y="0" width="436" height="414"/>
+	<SubTexture name="PentagonRed.png" x="681" y="0" width="673" height="658"/>
+</TextureAtlas>
