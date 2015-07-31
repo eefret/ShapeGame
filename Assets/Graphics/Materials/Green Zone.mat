@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Green Zone
-  m_Shader: {fileID: 4800000, guid: 325769cd1a3dfb242b560e83117d2ac8, type: 3}
+  m_Shader: {fileID: 4800000, guid: ac9395c6b97b4b7468f6ea6182b0fb13, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 0
   m_CustomRenderQueue: 3000
@@ -20,7 +20,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: b02bf5e302e20e74086fcc4421baeaa4, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -128,6 +128,22 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _BorderRadius
+        second: .0379999988
+      data:
+        first:
+          name: _BorderCenterX
+        second: 0
+      data:
+        first:
+          name: _BorderCenterY
+        second: 0
+      data:
+        first:
+          name: _BoxSize
+        second: .0379999988
     m_Colors:
       data:
         first:
@@ -136,4 +152,16 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .43921572, g: .819607913, b: .501960814, a: .392156869}
+        second: {r: .196078449, g: .349019617, b: .46274513, a: .588235319}
+      data:
+        first:
+          name: _BorderColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _BorderCenter
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _ColorBorder
+        second: {r: .196078449, g: .349019617, b: .46274513, a: .313725501}

@@ -149,7 +149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &168020
 GameObject:
   m_ObjectHideFlags: 1
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3c97de1e09bb3d54085b4ab4c070e2aa, type: 3}
-    m_FontSize: 90
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd371337f5d4d64d93dc8e177a4be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preText: 'Last Score
+  preText: 'Highscore
 
 '
   refreshData: 2

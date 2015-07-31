@@ -8,10 +8,11 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Wall
   m_Shader: {fileID: 4800000, guid: 325769cd1a3dfb242b560e83117d2ac8, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -19,7 +20,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: b02bf5e302e20e74086fcc4421baeaa4, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -78,6 +79,13 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecGlossMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -86,7 +94,7 @@ Material:
       data:
         first:
           name: _DstBlend
-        second: 0
+        second: 10
       data:
         first:
           name: _Cutoff
@@ -98,11 +106,11 @@ Material:
       data:
         first:
           name: _ZWrite
-        second: 1
+        second: 0
       data:
         first:
           name: _Glossiness
-        second: .5
+        second: 0
       data:
         first:
           name: _BumpScale
@@ -122,10 +130,58 @@ Material:
       data:
         first:
           name: _Mode
-        second: 0
+        second: 3
       data:
         first:
           name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _BorderRadius
+        second: 0
+      data:
+        first:
+          name: _BorderLeft
+        second: .0379999988
+      data:
+        first:
+          name: _BorderRight
+        second: .0379999988
+      data:
+        first:
+          name: _BorderTop
+        second: .0379999988
+      data:
+        first:
+          name: _BorderBottom
+        second: .0379999988
+      data:
+        first:
+          name: _BoxSize
+        second: .0379999988
+      data:
+        first:
+          name: _BoxLeft
+        second: .0379999988
+      data:
+        first:
+          name: _BoxRight
+        second: .0379999988
+      data:
+        first:
+          name: _BoxTop
+        second: .0379999988
+      data:
+        first:
+          name: _BoxBottom
+        second: .0379999988
+      data:
+        first:
+          name: _BoxCenterX
+        second: 0
+      data:
+        first:
+          name: _BoxCenterY
         second: 0
     m_Colors:
       data:
@@ -135,4 +191,12 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .200000018, g: .588235319, b: .976470649, a: 1}
+        second: {r: 1, g: 1, b: 1, a: .196078435}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+      data:
+        first:
+          name: _ColorBorder
+        second: {r: 1, g: 0, b: 0, a: 1}

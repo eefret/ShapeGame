@@ -4,51 +4,47 @@ using System.Collections;
 public class ShapeManager : MonoBehaviour {
     
     //PUBLIC
-    public enum ShapeType { TRIANGLE, SQUARE, PENTAGON};
-
     public float forceStrength = 10.0f;
-    public ShapeType type;
-    
-    public Sprite[] spriteList;
+
+    [HideInInspector]
+    int _maxSides;
+    public int maxSides {
+        get { return _maxSides; }
+        set {
+            angleStep = Mathf.PI * 2 / value;
+            _maxSides = value;
+        }
+    }
 
     //PRIVATE
     private string playerName;
 
-    private bool isInZone;
-
     private int sides;
-    private int maxSides = 0;
-    
-    private SpriteRenderer spriteRenderer;
+    private float angleStep;
+    private float angle;
+
     private Rigidbody2D playerBody;
     private PolygonCollider2D polygonCollider;
 
     private GameObject gameMaster;
     private GameMasterScript gameController;
+    private Material material;
+
+    private AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
-        isInZone = false;
         sides = 0;
+        angle = 0;
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        Renderer renderer = GetComponent<Renderer>();
+        material = new Material(renderer.material);
+        renderer.material = material;
+
         polygonCollider = GetComponent<PolygonCollider2D>();
         playerBody = GetComponent<Rigidbody2D>();
 
-        switch (type) {
-            case ShapeType.TRIANGLE:
-                maxSides = 3;
-                playerName = "TRIANGLE";
-                break;
-            case ShapeType.SQUARE:
-                maxSides = 4;
-                playerName = "SQUARE";
-                break;
-			case ShapeType.PENTAGON:
-				maxSides = 5;
-				playerName = "PENTAGON";
-				break;
-        }
+        audioSource = GetComponent<AudioSource>();
 
         gameMaster = GameObject.FindGameObjectWithTag("GameController");
         gameController = gameMaster.GetComponent<GameMasterScript>();
@@ -82,10 +78,13 @@ public class ShapeManager : MonoBehaviour {
                 Vector3 pos = new Vector3(Random.Range(-5f, 5f), 10);
                 playerBody.AddForce(pos * forceStrength, ForceMode2D.Impulse);
 
+                audioSource.pitch = Random.Range(0.8f, 1.2f);
+                audioSource.Play();
+
                 DataManager.instance.AddScore(1);
+                angle += angleStep;
+                material.SetFloat("_Angle", angle);
                 sides++;
-                
-                spriteRenderer.sprite = spriteList[sides];
             }
         }
     }
