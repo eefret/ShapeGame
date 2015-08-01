@@ -60,6 +60,9 @@ public class GameMasterScript : MonoBehaviour {
         // Enable gameoverpanel and disable level gameobject
         if(gameOverPanel != null) {
             gameOverPanel.SetActive(true);
+			//Changing the score
+			GameObject score = GameObject.Find("UI/Game Over/Score");
+			score.GetComponent<UnityEngine.UI.Text>().text = "Score: "+ DataManager.instance.score;
         }
         if(levelObject != null) {
             levelObject.SetActive(false);
