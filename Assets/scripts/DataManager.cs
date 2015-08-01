@@ -6,7 +6,9 @@ public class DataManager: MonoBehaviour {
 
 	// Public variables// exists
 	public bool updateData;
-    
+
+    public int lastShapeSize;
+
     public int lastscore;
     public int highscore;
 	public int score;
@@ -62,8 +64,6 @@ public class DataManager: MonoBehaviour {
 	void Update () {
 		// Update values
 		if(updateData) {
-
-
 			// Gametime
 			// Count gameplay time
 			timePlayed.seconds += Time.deltaTime;
@@ -75,6 +75,7 @@ public class DataManager: MonoBehaviour {
 	public void Reset() {
 		// Init vars
         score = 0;
+        lastShapeSize = 2;
         lastscore = PlayerPrefs.GetInt(DataPrefs.LastScore);
         highscore = PlayerPrefs.GetInt(DataPrefs.Highscore);
 		timePlayed = new DataTime();

@@ -29,7 +29,7 @@ public class MeshCreator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        sides = Random.Range(3, 10);
+        sides = DataManager.instance.lastShapeSize + 1;
         GetComponent<ShapeManager>().maxSides = sides;
         
         setupShape();

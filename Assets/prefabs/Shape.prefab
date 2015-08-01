@@ -31,7 +31,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 416290}
   - 60: {fileID: 6062466}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 416290}
@@ -93,7 +93,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127074}
-  m_Mesh: {fileID: 4300904, guid: 3f29ac550d47df94ca63263fe9f05504, type: 2}
+  m_Mesh: {fileID: 4362476, guid: 175ccff533635874885bbeaf3d514068, type: 2}
 --- !u!50 &5055160
 Rigidbody2D:
   serializedVersion: 2
@@ -123,9 +123,10 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: .00238882191, y: -1.49999809}
-      - {x: -1.30023098, y: .74793005}
-      - {x: 1.29784203, y: .752067983}
+    - - {x: .0028665862, y: -1.79999769}
+      - {x: -1.79999769, y: -.00286672218}
+      - {x: -.00286642881, y: 1.79999769}
+      - {x: 1.79999769, y: .00286613568}
 --- !u!60 &6062466
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -140,8 +141,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: .00159254798, y: -.999998748}
-      - {x: -.866820693, y: .498620033}
-      - {x: .865227997, y: .501378655}
+      - {x: -.999998748, y: -.00159262354}
+      - {x: -.00159246055, y: .999998748}
+      - {x: .999998748, y: .00159229769}
 --- !u!82 &8233306
 AudioSource:
   m_ObjectHideFlags: 1
@@ -150,8 +152,9 @@ AudioSource:
   m_GameObject: {fileID: 127074}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 85b37ca49c7e79c43a9db8ef6d08be80, type: 3}
+  OutputAudioMixerGroup: {fileID: 24348834, guid: e1bbfeaa4baecb748bb0ebd4e533c76f,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: af0498e854e0a7241a15675d9733e948, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: .5
@@ -222,11 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84211aa98cc3da4f8c3649195a70179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sides: 3
+  sides: 4
   radius: 1
   scale: {x: 1, y: 1}
   polygonCollider: {fileID: 6062466}
-  colliderScale: 1.5
+  colliderScale: 1.79999995
   colliderOffset: {x: 0, y: 0}
   frontsided: 0
 --- !u!114 &11491818
@@ -241,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceStrength: 10
+  polygonCollider: {fileID: 6062466}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -283,11 +287,20 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 85b37ca49c7e79c43a9db8ef6d08be80, type: 3}
+      objectReference: {fileID: 8300000, guid: af0498e854e0a7241a15675d9733e948, type: 3}
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: polygonCollider
+      value: 
+      objectReference: {fileID: 6062466}
+    - target: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24348834, guid: e1bbfeaa4baecb748bb0ebd4e533c76f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127074}

@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Shape(Clone)
     100002: //RootNode
+    100004: Shape
     400000: Shape(Clone)
     400002: //RootNode
+    400004: Shape
     2300000: Shape(Clone)
+    2300002: Shape
     3300000: Shape(Clone)
+    3300002: Shape
     4300000: Shape(Clone)
+    4300002: Shape
   materials:
     importMaterials: 1
     materialName: 0

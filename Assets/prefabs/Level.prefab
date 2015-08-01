@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21278950}
   - 61: {fileID: 6197066}
   - 114: {fileID: 11409198}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall Rigth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 212: {fileID: 21254026}
   - 61: {fileID: 6171178}
   - 114: {fileID: 11497260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,9 +181,8 @@ GameObject:
   - 212: {fileID: 21277544}
   - 61: {fileID: 6139066}
   - 50: {fileID: 5085700}
-  - 114: {fileID: 11404562}
   - 114: {fileID: 11469518}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ceilling
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -372,7 +371,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198406}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5ded2db60f5e9fd4a8240097c551c6c8, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -421,21 +420,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11404562
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 198406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b443c06b93a7e49b2edd8fd5a6785e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offsetPosition: 1
-  offsetX: 0
-  offsetY: 1.5
-  offsetZ: 0
 --- !u!114 &11406724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,10 +480,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .588235319}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3c97de1e09bb3d54085b4ab4c070e2aa, type: 3}
-    m_FontSize: 32
+    m_FontSize: 96
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -509,9 +493,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score
-
-    0'
+  m_Text: 0
 --- !u!114 &11469518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -549,9 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd371337f5d4d64d93dc8e177a4be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preText: 'Score
-
-'
+  preText: 
   refreshData: 0
   posText: 
 --- !u!114 &11497260
@@ -1697,9 +1677,9 @@ Canvas:
   m_GameObject: {fileID: 164164}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1736,10 +1716,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22445858}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: 1}
-  m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 160, y: 60}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 80}
+  m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:

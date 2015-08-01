@@ -6,6 +6,8 @@ public class ShapeManager : MonoBehaviour {
     //PUBLIC
     public float forceStrength = 10.0f;
 
+    public PolygonCollider2D polygonCollider;
+
     [HideInInspector]
     int _maxSides;
     public int maxSides {
@@ -24,7 +26,7 @@ public class ShapeManager : MonoBehaviour {
     private float angle;
 
     private Rigidbody2D playerBody;
-    private PolygonCollider2D polygonCollider;
+    private PolygonCollider2D polygonTrigger;
 
     private GameObject gameMaster;
     private GameMasterScript gameController;
@@ -41,7 +43,8 @@ public class ShapeManager : MonoBehaviour {
         material = new Material(renderer.material);
         renderer.material = material;
 
-        polygonCollider = GetComponent<PolygonCollider2D>();
+        polygonTrigger = GetComponent<PolygonCollider2D>();
+        polygonCollider.enabled = false;
         playerBody = GetComponent<Rigidbody2D>();
 
         audioSource = GetComponent<AudioSource>();
@@ -51,6 +54,10 @@ public class ShapeManager : MonoBehaviour {
 	}
 
     void Update () {
+        if(transform.position.y < 0) {
+            polygonCollider.enabled = true;
+        }
+
         #if UNITY_ANDROID || UNITY_IOS
         if (Input.touchCount > 0) {
             if (Input.GetTouch(0).phase == TouchPhase.Began) {
@@ -70,9 +77,9 @@ public class ShapeManager : MonoBehaviour {
         BoxCollider2D collider = gameController.greenZoneCollider;
 
         if(collider != null && collider.OverlapPoint(position)) {
-            if (polygonCollider.OverlapPoint(position)) {
+            if (polygonTrigger.OverlapPoint(position)) {
                 if (sides == maxSides) {
-                    gameMaster.SendMessage("GameOver");//Game Over
+                    gameController.GameOver(); //Game Over
                 }
 
                 Vector3 pos = new Vector3(Random.Range(-5f, 5f), 10);
@@ -93,11 +100,11 @@ public class ShapeManager : MonoBehaviour {
         if (collision.transform.tag == "spikes") {
             if (sides == maxSides) {
                 Destroy(this.gameObject);
-                gameMaster.SendMessage("ShapeDestroyed", playerName, SendMessageOptions.DontRequireReceiver);
-                DataManager.instance.AddScore(10);
+                gameController.ShapeDestroyed(maxSides);
+                DataManager.instance.AddScore(maxSides);
                 Debug.Log("Destroyed Shape: " + playerName);
             } else {
-                gameMaster.SendMessage("GameOver");//Game Over
+                gameController.GameOver(); //Game Over
                 #if UNITY_EDITOR
                 //Debug.Log("Unity Editor");
                 //UnityEditor.EditorApplication.isPlaying = false;
