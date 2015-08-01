@@ -4,7 +4,7 @@ using GameStructures;
 
 public class DataManager: MonoBehaviour {
 
-	// Public variables// exists
+	// Public
 	public bool updateData;
 
     public int lastShapeSize;
@@ -72,6 +72,7 @@ public class DataManager: MonoBehaviour {
 		}
 	}
 
+    // Reset the data manager, init vars and set update flag
 	public void Reset() {
 		// Init vars
         score = 0;
@@ -84,6 +85,7 @@ public class DataManager: MonoBehaviour {
 		updateData = true;
 	}
 
+    // Add score if update data flag is on
 	public void AddScore(int Value) {
 		if (updateData) {
 			score += Mathf.RoundToInt (Value);

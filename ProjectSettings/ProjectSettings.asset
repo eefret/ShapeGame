@@ -72,7 +72,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.firstcrow.converge
-  bundleVersion: 0.2
+  bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
@@ -80,7 +80,7 @@ PlayerSettings:
   virtualRealitySupported: 0
   productGUID: b0f39662f161bbf4d9a46e15ed8b37c9
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 14
+  AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   apiCompatibilityLevel: 2
@@ -123,7 +123,7 @@ PlayerSettings:
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
-  AndroidTVCompatibility: 1
+  AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 0
   m_AndroidBanners:
@@ -135,19 +135,19 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: 7aeaca6db1cfbc74db775712b101b704, type: 3}
+    - m_Icon: {fileID: 2800000, guid: 1f3f1971be896bf419231ed8337d7ea5, type: 3}
       m_Size: 128
   - m_BuildTarget: Android
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 31d87dd0e6c274e4bb6a75263aea97b1, type: 3}
       m_Size: 192
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 76adc12fa0161864e8352811b6701a2d, type: 3}
       m_Size: 144
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 06bc9e26423e3954390e16608b219ef8, type: 3}
       m_Size: 96
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 6375884e271827648a206dc46640c88c, type: 3}
       m_Size: 72
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 6d849e592599a164591f9a15da32fc9d, type: 3}
       m_Size: 48
     - m_Icon: {fileID: 0}
       m_Size: 36

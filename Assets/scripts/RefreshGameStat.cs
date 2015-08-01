@@ -3,21 +3,25 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class RefreshGameStat : MonoBehaviour {
-    
+
+    // Enum
     public enum RefreshData {
         CurrentScore,
         Lastscore,
         Highscore,
     };
-    
+
+    // Public
+    [Multiline(2)] // 2 lines on inspector
+    public string preText = "";
+    [Multiline(2)] // 2 lines on inspector
+    public string posText = "";
+
+    public RefreshData refreshData;
+
+    // Private
     private Text guiTextUI;
 
-    [Multiline(2)]
-    public string preText = "";
-    public RefreshData refreshData;
-    [Multiline(2)]
-    public string posText = "";
-    
     // Use this for initialization
     void Start () {
         guiTextUI = GetComponent<Text> ();
@@ -25,8 +29,10 @@ public class RefreshGameStat : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
+        // Setup preText
         guiTextUI.text = preText;
-        
+
+        // Add stat
         switch (refreshData) {
             case RefreshData.CurrentScore:
                 guiTextUI.text += DataManager.instance.score.ToString();
@@ -41,7 +47,8 @@ public class RefreshGameStat : MonoBehaviour {
                 guiTextUI.text += "";
                 break;
         }
-        
+
+        // Add posText
         guiTextUI.text += posText;
     }
 }

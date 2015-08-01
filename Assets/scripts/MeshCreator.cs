@@ -13,7 +13,10 @@ public class MeshCreator : MonoBehaviour {
     public int sides = 1;
     public float radius = 1;
     public Vector2 scale = new Vector2(1, 1);
+
     public PolygonCollider2D polygonCollider;
+    public PolygonCollider2D polygonTrigger;
+
     public float colliderScale = 1;
     public Vector2 colliderOffset = new Vector2(0, 0);
     
@@ -21,8 +24,8 @@ public class MeshCreator : MonoBehaviour {
     public bool frontsided = true;
 
     // Private vars
-    private Vector3[] vertexInputs;
     private Vector3 center;
+    private Vector3[] vertexInputs;
     private Vector3[] vertexes;
     private Vector2[] uv;
     private int[] triangles;
@@ -31,7 +34,9 @@ public class MeshCreator : MonoBehaviour {
 	void Start () {
         sides = DataManager.instance.lastShapeSize + 1;
         GetComponent<ShapeManager>().maxSides = sides;
-        
+
+        polygonTrigger = GetComponent<PolygonCollider2D>();
+
         setupShape();
 	}
 	
@@ -40,17 +45,20 @@ public class MeshCreator : MonoBehaviour {
 	    
 	}
 
+    // Generate input vertexes
     public void generateInput () {
-        int i;
+        // Init vars
         float angle = 3.14f;
         float angleStep = Mathf.PI * 2 / sides;
         vertexInputs = new Vector3[sides];
-        for(i = 0; i < vertexInputs.Length; i++) {
+        // Create vertexes
+        for(int i = 0; i < vertexInputs.Length; i++) {
             vertexInputs[i] = new Vector2(Mathf.Sin(angle) * radius * scale.x, Mathf.Cos(angle) * radius * scale.y);
             angle += angleStep;
         }
     }
 
+    // Create the shape mesh
     public void setupShape ()
     {
         // Generate vertexes
@@ -67,7 +75,6 @@ public class MeshCreator : MonoBehaviour {
         #endif
         
         // Setup 2d poly collider points
-        PolygonCollider2D polygonTrigger = GetComponent<PolygonCollider2D>();
         Vector2[] shapeTriggerPoints = new Vector2[vertexInputs.Length];
         Vector2[] shapeColliderPoints = new Vector2[vertexInputs.Length];
         // Change 3d points to 2d points with scale and offset then set them
@@ -75,6 +82,7 @@ public class MeshCreator : MonoBehaviour {
             shapeTriggerPoints[i] = new Vector2(vertexInputs[i].x * colliderScale + colliderOffset.x, vertexInputs[i].y * colliderScale + colliderOffset.y);
             shapeColliderPoints[i] = new Vector2(vertexInputs[i].x + colliderOffset.x, vertexInputs[i].y + colliderOffset.y);
         }
+        // Setup collider and trigger
         polygonTrigger.points = shapeTriggerPoints;
         polygonCollider.points = shapeColliderPoints;
     }
@@ -84,6 +92,7 @@ public class MeshCreator : MonoBehaviour {
         // Set the vertexs and trianges array
         vertexes = new Vector3[vertexInputs.Length * 3];
         triangles = new int[vertexInputs.Length * 3];
+        uv = new Vector2[vertexInputs.Length * 3]; 
                 
         // Find center position
         center = new Vector3(0, 0, 0);
@@ -125,7 +134,6 @@ public class MeshCreator : MonoBehaviour {
         }
 
         //UV
-        uv = new Vector2[vertexInputs.Length * 3]; 
         for(i = 0; i < uv.Length; i++) {
             uv[i] = new Vector2(vertexes[i].x, vertexes[i].y);
         }
@@ -142,7 +150,8 @@ public class MeshCreator : MonoBehaviour {
         
         return mesh;
     }
-    
+
+    // Draw gizmo
     void OnDrawGizmosSelected() {
         // Generate vertexes
         generateInput();
@@ -190,6 +199,7 @@ public class MeshCreator : MonoBehaviour {
         }
     }
 
+    // Convert mesh to string
     public static string MeshToString(MeshFilter mf) {
         Mesh m = mf.sharedMesh;
         Material[] mats = mf.GetComponent<Renderer>().sharedMaterials;
@@ -221,7 +231,8 @@ public class MeshCreator : MonoBehaviour {
         }
         return sb.ToString();
     }
-    
+
+    // Save mesh as a file
     public static void MeshToFile(MeshFilter mf, string filename) {
         using (StreamWriter sw = new StreamWriter(filename)) 
         {
