@@ -8,15 +8,20 @@ ModelImporter:
     100000: Shape
     100002: //RootNode
     100004: Shape(Clone)
+    100006: Shape(Clone)_(1)
     400000: Shape
     400002: //RootNode
     400004: Shape(Clone)
+    400006: Shape(Clone)_(1)
     2300000: Shape
     2300002: Shape(Clone)
+    2300004: Shape(Clone)_(1)
     3300000: Shape
     3300002: Shape(Clone)
+    3300004: Shape(Clone)_(1)
     4300000: Shape
     4300002: Shape(Clone)
+    4300004: Shape(Clone)_(1)
   materials:
     importMaterials: 1
     materialName: 0

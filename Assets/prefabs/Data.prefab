@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 474374}
   - 114: {fileID: 11448154}
+  - 114: {fileID: 11481502}
+  - 114: {fileID: 11442654}
   - 82: {fileID: 8221990}
   m_Layer: 0
   m_Name: Data
@@ -99,6 +101,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11442654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb6caeb2e6a6d44f910da2cd31add48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11448154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,6 +128,17 @@ MonoBehaviour:
   lastscore: 0
   highscore: 0
   score: 0
+--- !u!114 &11481502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f015dd5e155de84ebc84d0bf30344b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

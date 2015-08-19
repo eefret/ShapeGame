@@ -35,6 +35,11 @@ public class GameMasterScript : MonoBehaviour {
             shape.transform.localPosition = new Vector3(Random.Range(-3.5f, 3.5f), 16 + offsetY, -2);
         }
     }
+    
+    // Score callback
+    void ScoreCallback(bool Success) {
+        
+    }
 
     // Shape destroyed public function
     public void ShapeDestroyed(int size) {
@@ -67,5 +72,8 @@ public class GameMasterScript : MonoBehaviour {
         if(levelObject != null) {
             levelObject.SetActive(false);
         }
+
+        // Submit score to leaderboard
+        DataManager.instance.GetComponent<Leaderboard>().AddScoreLeaderboard(DataManager.instance.score, ScoreCallback);
     }
 }

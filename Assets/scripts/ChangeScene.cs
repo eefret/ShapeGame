@@ -8,7 +8,6 @@ public class ChangeScene : MonoBehaviour {
 	}
 
 	public void ChangeSceneByID (int sceneID) {
-		Debug.Log (sceneID);
 		Application.LoadLevel(sceneID);
 	}
 

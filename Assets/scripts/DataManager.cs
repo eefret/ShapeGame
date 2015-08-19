@@ -4,7 +4,7 @@ using GameStructures;
 
 public class DataManager: MonoBehaviour {
 
-	// Public
+    // Public
 	public bool updateData;
 
     public int lastShapeSize;
@@ -15,7 +15,7 @@ public class DataManager: MonoBehaviour {
 
 	public DataTime timePlayed;
 
-	// Singleton reference
+    // Singleton reference
 	private static DataManager _instance;
 
 	// Get singleton

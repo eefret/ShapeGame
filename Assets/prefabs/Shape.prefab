@@ -229,6 +229,7 @@ MonoBehaviour:
   radius: 1
   scale: {x: 1, y: 1}
   polygonCollider: {fileID: 6062466}
+  polygonTrigger: {fileID: 0}
   colliderScale: 1.79999995
   colliderOffset: {x: 0, y: 0}
   frontsided: 0

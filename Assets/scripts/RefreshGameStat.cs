@@ -9,6 +9,7 @@ public class RefreshGameStat : MonoBehaviour {
         CurrentScore,
         Lastscore,
         Highscore,
+        BundleVersion,
     };
 
     // Public
@@ -42,6 +43,9 @@ public class RefreshGameStat : MonoBehaviour {
                 break;
             case RefreshData.Lastscore:
                 guiTextUI.text += DataManager.instance.lastscore.ToString();
+                break;
+            case RefreshData.BundleVersion:
+                guiTextUI.text += "1.1";
                 break;
             default:
                 guiTextUI.text += "";
